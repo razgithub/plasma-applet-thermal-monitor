@@ -18,6 +18,9 @@
     </group>
 
     <group name="Appearance">
+        <entry name="aliasLeftMargin" type="Int">
+            <default>0</default>
+        </entry>
         <entry name="aliasFontSize" type="Int">
             <default>27</default>
         </entry>
@@ -31,6 +34,9 @@
             <default>0</default>
         </entry>
         <entry name="iconBottomMargin" type="Int">
+            <default>0</default>
+        </entry>
+        <entry name="verticalShrink" type="Int">
             <default>0</default>
         </entry>
         <entry name="enableLabelDropShadow" type="Bool">

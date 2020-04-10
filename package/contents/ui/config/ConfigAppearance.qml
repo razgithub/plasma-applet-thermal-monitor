@@ -4,17 +4,31 @@ import QtQuick.Layouts 1.1
 
 Item {
     
+    property alias cfg_aliasLeftMargin: aliasLeftMargin.value
     property alias cfg_aliasFontSize: aliasFontSize.value
     property alias cfg_temperatureFontSize: temperatureFontSize.value
     property alias cfg_iconFontSize: iconFontSize.value
     property alias cfg_temperatureRightMargin: temperatureRightMargin.value
     property alias cfg_iconBottomMargin: iconBottomMargin.value
+    property alias cfg_verticalShrink: verticalShrink.value
     property alias cfg_enableLabelDropShadow: enableLabelDropShadow.checked
     
     GridLayout {
         columns: 2
         anchors.left: parent.left
         anchors.right: parent.right
+        
+        Label {
+            text: i18n('Alias left margin:')
+            Layout.alignment: Qt.AlignRight
+        }
+        Slider {
+            id: aliasLeftMargin
+            stepSize: 1
+            minimumValue: 0
+            maximumValue: 80
+            Layout.fillWidth: true
+        }
         
         Label {
             text: i18n('Alias font size:')
@@ -76,6 +90,18 @@ Item {
             Layout.fillWidth: true
         }
         
+        Label {
+            text: i18n('Vertical shrink:')
+            Layout.alignment: Qt.AlignRight
+        }
+        Slider {
+            id: verticalShrink
+            stepSize: 1
+            minimumValue: 0
+            maximumValue: 100
+            Layout.fillWidth: true
+        }
+       
         Item {
             width: 2
             height: 10

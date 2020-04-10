@@ -48,11 +48,13 @@ Item {
 
     Plasmoid.preferredRepresentation: Plasmoid.fullRepresentation
 
+    property double aliasLeftMargin: itemHeight * plasmoid.configuration.aliasLeftMargin * 0.01
     property double aliasFontSize: itemHeight * plasmoid.configuration.aliasFontSize * 0.01
     property double temperatureFontSize: itemHeight * plasmoid.configuration.temperatureFontSize * 0.01
     property double iconFontSize: itemHeight * plasmoid.configuration.iconFontSize * 0.01
     property double temperatureRightMargin: itemHeight * plasmoid.configuration.temperatureRightMargin * 0.01
     property double iconBottomMargin: itemHeight * plasmoid.configuration.iconBottomMargin * 0.01
+    property double verticalShrink: itemHeight * plasmoid.configuration.verticalShrink * 0.01
     property bool enableLabelDropShadow: plasmoid.configuration.enableLabelDropShadow
 
     property var systemmonitorAvailableSources
@@ -100,7 +102,7 @@ Item {
         }
         itemHeight = itemWidth
         widgetWidth = orientationVertical ? itemWidth : numberOfParts * itemWidth + (numberOfParts-1) * itemMargin
-        widgetHeight = orientationVertical ? numberOfParts * itemHeight + (numberOfParts-1) * itemMargin : itemHeight
+        widgetHeight = orientationVertical ? numberOfParts * (itemHeight - verticalShrink) + (numberOfParts-1) * itemMargin : itemHeight
     }
 
     FontLoader {

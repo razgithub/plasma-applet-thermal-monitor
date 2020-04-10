@@ -24,7 +24,7 @@ Item {
     id: temperatureItem
 
     width: itemWidth
-    height: itemHeight
+    height: itemHeight - verticalShrink
 
     //
     // all temperatures defaults to Celsius
@@ -57,6 +57,9 @@ Item {
 
         PlasmaComponents.Label {
             id: aliasText
+
+            anchors.left: parent.left
+            anchors.leftMargin: aliasLeftMargin
 
             font.pixelSize: aliasFontSize
             font.pointSize: -1
